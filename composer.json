@@ -1,0 +1,83 @@
+{
+    "name": "ugarit/pennant",
+    "description": "A simple, lightweight library for managing feature flags.",
+    "keywords": [
+        "ugarit",
+        "pennant",
+        "feature",
+        "flags"
+    ],
+    "homepage": "https://github.com/ugarit/pennant",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/ugarit/pennant/issues",
+        "source": "https://github.com/ugarit/pennant"
+    },
+    "authors": [
+        {
+            "name": "Muath R Abu Ouda",
+            "email": "muathrabuouda@hotmail.com",
+            "role": "Vision Leader of Ugarit"
+        },
+        {
+            "name": "Taylor Otwell",
+            "email": "taylor@laravel.com",
+            "role": "Original Creator & Primary Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "heritage/console": "^1.00.00",
+        "heritage/container": "^1.00.00",
+        "heritage/contracts": "^1.00.00",
+        "heritage/database": "^1.00.00",
+        "heritage/queue": "^1.00.00",
+        "heritage/support": "^1.00.00",
+        "symfony/console": "^6.0|^7.0|^8.0",
+        "symfony/finder": "^6.0|^7.0|^8.0"
+    },
+    "require-dev": {
+        "ugarit/octane": "^1.00.00",
+        "orchestra/testbench": "^8.36|^9.15|^10.8|^11.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ugarit\\Pennant\\": "src/"
+        },
+        "files": [
+            "src/helpers.php",
+            "src/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "ugarit": {
+            "providers": [
+                "Ugarit\\Pennant\\PennantServiceProvider"
+            ],
+            "aliases": {
+                "Feature": "Ugarit\\Pennant\\Feature"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-autoload-dump": "@prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "1.00.00"
+}

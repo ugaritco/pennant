@@ -1,0 +1,8 @@
+providers:
+  - Ugarit\Pennant\PennantServiceProvider
+
+migrations:
+  - database/migrations
+
+workbench:
+  install: true

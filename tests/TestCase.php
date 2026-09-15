@@ -1,0 +1,22 @@
+<?php
+
+namespace Tests;
+
+use Ugarit\Pennant\FeatureManager;
+use Orchestra\Testbench\Concerns\WithWorkbench;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
+
+abstract class TestCase extends OrchestraTestCase
+{
+    use WithWorkbench;
+
+    /**
+     * Create an instance of the manager.
+     *
+     * @return FeatureManager
+     */
+    protected function createManager()
+    {
+        return new FeatureManager($this->app);
+    }
+}
